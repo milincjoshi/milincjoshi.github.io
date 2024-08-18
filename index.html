@@ -1,649 +1,301 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <meta charset="utf-8" />
-
-	<!--JQuery Link-->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-
-    <!--Bootstrap-->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
-	<!--MDL Loader Link-->
-	<script src="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.min.js"></script>
-    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.indigo-pink.min.css">
-
-	<script type="text/javascript">
-			$(window).load(function () {
-			$(".loader").fadeOut("slow");
-		})
-	</script>
-
-
-
-
-    <!-- Material Design icon font -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
-	<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.red-blue.min.css" />
-    <!--font link-->
-    <link href='https://fonts.googleapis.com/css?family=PT+Sans:700,400' rel='stylesheet' type='text/css'>
-     <link href='https://fonts.googleapis.com/css?family=Lato:400,700,300' rel='stylesheet' type='text/css'>
-    <!--Bootstrap Links-->
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milin Joshi - Portfolio</title>
     <style>
-	.fontLato{font-family: 'Lato', sans-serif;}
-    .height100{height:100%;min-height:100%;}
-	.loader {
-		position: fixed;
-		left: 0px;
-		top: 0px;
-		width: 100%;
-		height: 100%;
-		z-index: 9999;
-		//background: url('/images/726.gif') 50% 50% no-repeat rgb(249,249,249);
-	}
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
 
-	body {font-family: 'PT Sans', sans-serif; position:relative;}
-        .marginTop1 { margin-top:1%;}
-        .marginTop5 { margin-top:5%;}
-        .marginTop10 { margin-top:10%;}
-        .marginTop15 { margin-top:15%;}
-        .fontPTSans {font-family: 'PT Sans', sans-serif; }
-        /*Card Css*/
-        .demo-card-square.mdl-card {
-            width: 320px;
-            height: 320px;
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-bottom: 40px;
         }
-        .demo-card-square > .mdl-card__title {
-            color: #fff;
-        }
-        /*End Card Css*/
-        /*Large Card*/
-        .demo-card-wide.mdl-card {
-            // width: 512px;
-        }
-        .demo-card-wide > .mdl-card__title {
-          color: #fff;
-          height: 176px;
 
-          //background: url('images/trslogo.jpg') center / cover no-repeat;
-          background: url('http://www.weebly.com/editor/uploads/2/6/9/1/26913164/custom_themes/491711962254056724/files/trslogo.jpg') center / cover no-repeat;
-          background-size:contain;
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            letter-spacing: 2px;
         }
-        .demo-card-wide > .mdl-card__menu {
-          color: #fff;
-        }
-        /*End Large Card*/
-        /*Event Card*/
-        .demo-card-event.mdl-card {
-          width: 256px;
-          height: 256px;
-          background: #3E4EB8;
-        }
-        .demo-card-event > .mdl-card__actions {
-          border-color: rgba(255, 255, 255, 0.2);
-        }
-        .demo-card-event > .mdl-card__title {
-          align-items: flex-start;
-        }
-        .demo-card-event > .mdl-card__title > h4 {
-          margin-top: 0;
-        }
-        .demo-card-event > .mdl-card__actions {
-          display: flex;
-          box-sizing:border-box;
-          align-items: center;
-        }
-        .demo-card-event > .mdl-card__title,
-        .demo-card-event > .mdl-card__actions,
-        .demo-card-event > .mdl-card__actions > .mdl-button {
-          color: #fff;
-        }
-        /*Round Button CSS*/
-        .round-button {
-            display:block;
-            width:100px;
-            height:100px;
-            border: 2px solid #f5f5f5;
-            border-radius: 50%;
-            color:#f5f5f5;
-            text-align:center;
-            text-decoration:none;
-            background: #464646;
-            box-shadow: 0 0 3px gray;
-            font-size:15px;
-        }
-        /*End Round Button CSS*/
-        hr {
-            display: block;
-            margin-top: 1em;
-            margin-bottom: 1em;
-            margin-left: auto;
-            margin-right: auto;
-            border-style: inset;
-            border-width: 2px;
 
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 0 20px;
         }
-        .circleDiv{
-            width:250px;
-            height:200px;
-            //border-radius:10%;
-            font-size:18px;
-            color:#fff;
-            //line-height:200px;
-            //text-align:center;
-            padding:2%;
-            background:#000;
-            margin-left: 1%;
-            margin-top: 1%;
-            background-color:grey;
 
-            box-shadow: 10px 10px 10px #ccc;
-            -webkit-box-shadow: 10px 10px 10px #ccc;
-            -moz-box-shadow: 10px 10px 10px #ccc;
+        section {
+            margin-bottom: 50px;
         }
-      .circleSkills{
-            width:150px;
-            height:150px;
-            border-radius:50%;
-            font-size:15px;
-            color:#fff;
-            line-height:150px;
-            text-align:center;
-            background:#000;
-            margin-left: 2%;
-            margin-top: 2%;
+
+        section h2 {
+            font-size: 2rem;
+            color: #333;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
         }
-        .hrClass{ margin-top:0%;}
-        .socialMargin{ height:50px;width:50px;}
-        .inlineDisplay{display: inline; margin-left: 5%;}
-        /*Menu Slide
-		article {
-			position: fixed;
-			width: 70%;
-			left: 0;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			padding: 30px 15%;
-			background-color: #fff;
-			overflow: auto;
-			z-index: 0;
-			-webkit-transform-origin: 0 50%;
-			-moz-transform-origin: 0 50%;
-			-ms-transform-origin: 0 50%;
-			-o-transform-origin: 0 50%;
-			transform-origin: 0 50%;
-		}
 
-		article:after {
-			position: absolute;
-			content: ' ';
-			left: 100%;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			background-image: -webkit-linear-gradient(right, rgba(0, 0, 0, 0.2) 0%, transparent 100%);
-			background-image: -moz-linear-gradient(right, rgba(0, 0, 0, 0.2) 0%, transparent 100%);
-			background-image: -ms-linear-gradient(right, rgba(0, 0, 0, 0.2) 0%, transparent 100%);
-			background-image: -o-linear-gradient(right, rgba(0, 0, 0, 0.2) 0%, transparent 100%);
-			background-image: linear-gradient(right, rgba(0, 0, 0, 0.2) 0%, transparent 100%);
-			pointer-events: none;
-		}
+        ul {
+            list-style: none;
+            padding: 0;
+        }
 
-		nav {
-			position: fixed;
-			left: -16em;
-			top: 0;
-			bottom: 0;
-			background-color: white;
-			border-right: 50px solid #74828F;
-			box-shadow: 4px 0 5px rgba(0, 0, 0, 0.2);
-			z-index: 1;
-			cursor: pointer;
-		}
+        ul li {
+            background: #fff;
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
 
-		nav:after {
-			position: absolute;
-			content: ' ';
-			width: 0;
-			height: 0;
-			right: -70px;
-			top: 50%;
-			border-width: 15px 10px;
-			border-style: solid;
-			border-color: transparent transparent transparent black;
-		}
+        ul li a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-		nav ul {
-			width: 14em;
-			list-style-type: none;
-			margin: 0;
-			padding: 1em;
-		}
+        ul li a:hover {
+            text-decoration: underline;
+        }
 
-		article,
-		article:after,
-		nav,
-		nav * {
-			-webkit-transition: all 600ms ease;
-			-moz-transition: all 600ms ease;
-			-ms-transition: all 600ms ease;
-			-o-transition: all 600ms ease;
-			transition: all 600ms ease;
-		}
+        #contact {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
 
-		nav:hover {
-			left: 0;
-		}
+        #contact h2 {
+            font-size: 2rem;
+            color: #333;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
 
-		nav:hover ~ article:after {
-			left: 60%;
-		}
+        #contact p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
 
-	       End Menu Slide*/
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input,
+        textarea {
+            margin-bottom: 15px;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 0;
+        }
     </style>
 </head>
-<body class='container  wsite-theme-light height100'>
 
-<!--Loader
-<div style="margin-top:30%;margin-left:30%;" class="loader">
-	<div id="p2" class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
-	<div>Loading Milin's website...</div>
-</div>
-End Loader-->
-<!-- menu
-	<nav style='opacity:0.6;'>
-		<ul>
-			<li class='text-center'><a class='col-lg-12' onclick="home()">Home</a></li>
-			<li class='text-center'><a class='col-lg-12' onclick="login()">Login</a></li>
-			<li class='text-center'><a class='col-lg-12' onclick="joinus()">Join Us</a></li>
-			<li class='text-center'><a class='col-lg-12' onclick="aboutus()">About Us</a></li>
-			<li class='text-center'><a class='col-lg-12' onclick="contactus()">Contact Us</a></li>
-			<li class='text-center'><a class='col-lg-12' onclick="projects()">Projects</a></li>
-			<li class='text-center'><a class='col-lg-12' onclick="members()">Members</a></li>
-		</ul>
-	</nav>
-End Menu-->
+<body>
+    <header>
+        <h1>Milin Joshi - Portfolio</h1>
+    </header>
 
-	<!--Navbar test-->
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Milin Joshi</a>
-          </div>
-          <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
-            <ul class="nav navbar-nav navbar-right">
-               <li><a href="#Bio">Bio</a></li>
-               <li><a href="#Education">Education</a></li>
-               <li><a href="#Experience">Experience</a></li>
-               <li><a href="#Skills">Skills</a></li>
-		    </ul>
-          </div>
-        </div>
-      </nav>
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
+    <div class="container">
+        <section id="work">
+            <h2>Work</h2>
+            <ul>
+                <li>Bound To Break</li>
+                <li>Struggle of Achievement</li>
+            </ul>
+        </section>
 
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-				  <span class="sr-only">Toggle navigation</span>
-				  <span class="icon-bar"></span>
-				  <span class="icon-bar"></span>
-				  <span class="icon-bar"></span>
-            </button>
-				<a class="navbar-brand" href="#">Milin Joshi</a>
-            </div>
-            <div  class="collapse navbar-collapse navbar-right">
-                <ul class="nav navbar-nav">
-                    <li><a href="#Bio">Bio</a></li>
-                    <li><a href="#Education">Education</a></li>
-                    <li><a href="#Experience">Experience</a></li>
-                    <li><a href="#Experience">Projects</a></li>
-                    <li><a href="#Skills">Skills</a></li>
-                </ul>
+        <section id="books">
+            <h2>Books</h2>
+            <h3>Books - Done</h3>
+            <ul>
+                <li>Story by Robert McKee</li>
+                <li>Save the Cat by Blake Snyder</li>
+                <li>Save the Cat Strikes Back by Blake Snyder</li>
+                <li>The Writer's Journey by Christopher Vogler</li>
+                <li>The Anatomy of Story by John Truby</li>
+                <li>Creating Character Arcs by K.M. Weiland</li>
+                <li>Screenplay by Syd Field</li>
+                <li>The Hero's Journey by Neal Soloponte</li>
+                <li>The Screenwriter's Bible by David Trottier</li>
+                <li>Writing Screenplays that Sell by Michael Hauge</li>
+                <li>The Best Story Wins by Matthew Luhn</li>
+            </ul>
+            <h3>Books - Pending</h3>
+            <ul>
+                <li>The Anatomy of Genres by John Truby</li>
+                <li>Creating Character Arcs Workbook by K.M. Weiland</li>
+                <li>The Hero's Journey by Joseph Campbell</li>
+                <li>The Shape of Stories by Neal Soloponte</li>
+                <li>The Hero with a Thousand Faces</li>
+                <li>Selling Your Story in 60 Seconds by Michael Hauge</li>
+                <li>The Art of Dramatic Writing by Lajos Egri</li>
+                <li>Making Comics by Scott McCloud</li>
+                <li>Understanding Comics by Scott McCloud</li>
+                <li>Reinventing Comics by Scott McCloud</li>
+                <li>The Three C’s of Cinematography by Mascelli</li>
+                <li>Into the Woods: A Five Act Journey Into Story by John Yorke</li>
+                <li>The Secrets of Story by Matt Bird</li>
+                <li>150 Screenwriting Challenges by Eric Heisserer</li>
+                <li>Adventures in the Screen Trade by William Goldman</li>
+                <li>The Positive Trait Thesaurus by Angela Ackerman & Becca Puglisi</li>
+            </ul>
+        </section>
 
-            </div>
-        </div>
-    </nav>
-    <!--End Navbar-->
-
-    <div class="row height100">
-
-        <!--Try new div-->
-            <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12 height100'>
-
-                <!--Image-->
-                <div class='col-lg-5 marginTop15'>
-                             <img  class="img-circle pull-right" height="50%" width="50%" src="http://www.weebly.com/editor/uploads/2/6/9/1/26913164/custom_themes/491711962254056724/files/milinjoshi.jpg" alt="Milin Joshi" />
-                </div>
-                <!--End Image-->
-                <!--Text-->
-                <div class='col-lg-6 marginTop15'>
-                    <ul style="list-style-type:none;font-size:20px;">
-                        <li style='font-size:30px; margin-top:5%;'><strong>Milin Joshi</strong></li>
-                        <li style=' margin-top:3%;'>A PC devotee, constantly inquisitive for new advances.</li>
-                        <li style=' margin-top:2%;'>I like to compose Code, construct Animations and create Games.</li>
-                        <li style=' margin-top:2%;'>Looking for Internship-position opportunity as Software Developer</li>
-                        <li style=' margin-top:2%;'> I drink Java. I can C#. I wear Bootstrap.</li>
-                    </ul>
-                </div>
-                <div class='col-lg-12'>
-
-                    <ul class='col-lg-10 col-lg-offset-1 text-center center-block' style="list-style-type:none;">
-                        <a style='margin-left:10%;' href="https://www.linkedin.com/in/milincjoshi">
-                            <li class='inlineDisplay'>
-                                <img class="socialMargin" src="http://www.weebly.com/editor/uploads/2/6/9/1/26913164/custom_themes/491711962254056724/files/linkedin.png" alt="Linkedin milincjoshi" />
-                            </li>
-                        </a>
-                        <a href='https://www.facebook.com/milincjoshi'>
-                            <li class='inlineDisplay'>
-                                 <img class="socialMargin" src="http://www.weebly.com/editor/uploads/2/6/9/1/26913164/custom_themes/491711962254056724/files/fb.png" alt="fb milincjoshi" />
-                            </li>
-                        </a>
-                        <a href='https://plus.google.com/u/0/+milinjoshi'>
-                            <li class='inlineDisplay'>
-                                 <img class="socialMargin" src="http://www.weebly.com/editor/uploads/2/6/9/1/26913164/custom_themes/491711962254056724/files/g.png" alt="g+ milincjoshi" />
-                            </li>
-                        </a>
-                        <a href='https://500px.com/milincjoshi'>
-                            <li class='inlineDisplay'>
-                                 <img class="socialMargin" src="http://www.weebly.com/editor/uploads/2/6/9/1/26913164/custom_themes/491711962254056724/files/500px.png" alt="500px milincjoshi" />
-                            </li>
-                        </a>
-                        <a href='https://twitter.com/MilincJoshi'>
-                            <li class='inlineDisplay'>
-                                <img class="socialMargin" src="http://www.weebly.com/editor/uploads/2/6/9/1/26913164/custom_themes/491711962254056724/files/twitter.png" alt="twitter milincjoshi" />
-                            </li>
-                        </a>
-                        <a href='https://www.instagram.com/milincjoshi/'>
-                            <li class='inlineDisplay'>
-                                <img class="socialMargin" src="http://www.weebly.com/editor/uploads/2/6/9/1/26913164/custom_themes/491711962254056724/files/instagram.png" alt="instagram milincjoshi" />
-                            </li>
-                        </a>
-                        <a href='https://github.com/milincjoshi'>
-                            <li class='inlineDisplay'>
-                                <img class="socialMargin" src="http://www.weebly.com/editor/uploads/2/6/9/1/26913164/custom_themes/491711962254056724/files/github.png" alt="instagram milincjoshi" />
-                            </li>
-                        </a>
-
-
-                    </ul>
-                </div>
-
-                <!--End Text-->
-            </div>
-        <!--Try new div-->
-
-<hr>
-<h3 class=" col-lg-12 col-md-12 col-sm-12 col-xs-12 img-rounded text-center" style='font-size:30px;'>
-    <strong>Info</strong>
-</h3>
-
-        <!--Phase 2-->
-
-        <div  id='Bio' class='col-lg-12 height100'>
-
-            <ul style='list-style-type:none; font-size:20px;'>
-                <li style='margin-top:1%;'>
-                    Well, It's an advancing world, but it's the only one we got. I guarantee you that everyday developers are needed to build softwares
+        <section id="art-books">
+            <h2>Art Books</h2>
+            <ul>
+                <li><a href="https://amzn.to/3udHW7J" target="_blank">Parasite - Bong Joon Ho</a></li>
+                <li><a href="https://amzn.to/2REB1XX" target="_blank">Studio Anywhere - Nick Fancher</a></li>
+                <li><a href="https://amzn.to/2TcYBvn" target="_blank">SetLife - Matthew Webb</a></li>
+                <li><a href="https://amzn.to/34ed4sY" target="_blank">Film Directing Shot by Shot - Steven D. Katz</a>
                 </li>
-                <li style='margin-top:1%;'>
-                    I have a philosphy: Knowing to code is like having a superpower
+                <li><a href="https://amzn.to/3hOF1Q7" target="_blank">Screenplay The Foundations of Screenwriting - Syd
+                        Field</a></li>
+                <li><a href="https://amzn.to/3ucqfW3" target="_blank">The Photographer's Eye - Michael Freeman</a></li>
+                <li><a href="https://amzn.to/2RFeABY" target="_blank">The Technique of Film and Video Editing - Ken
+                        Dancyger</a></li>
+                <li><a href="https://amzn.to/34nANHD" target="_blank">Lighting for Cinematography - David Landau</a>
                 </li>
-                <li style='margin-top:1%;'>
-                    Yeah, I can code.
+                <li><a href="https://amzn.to/3oJVJl7" target="_blank">Cinematography Theory and Practice - Blain
+                        Brown</a></li>
+                <li><a href="https://amzn.to/3oHrKKI" target="_blank">Set Lighting Technician's Handbook</a></li>
+                <li><a href="https://amzn.to/3fgerxM" target="_blank">The Filmmaker's Eye - Gustavo Mercado</a></li>
+            </ul>
+        </section>
+
+        <section id="video">
+            <h2>Videos/Youtube</h2>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=KxDwieKpawg" target="_blank">The Clues to a Great Story |
+                        Andrew Stanton | TED</a></li>
+                <li><a href="https://www.youtube.com/watch?v=sLM6mSSLws0" target="_blank">When a Kid’s Movie Actually
+                        Respects Its Audience</a></li>
+                <li><a href="https://www.youtube.com/user/everyframeapainting/videos" target="_blank">Every Frame a
+                        Painting</a></li>
+                <li><a href="https://www.youtube.com/@3blue1brown" target="_blank">3blue1brown</a></li>
+                <li><a href="https://www.youtube.com/@BehindtheCurtain" target="_blank">Behind the Curtain</a></li>
+            </ul>
+        </section>
+
+        <section id="blogs">
+            <h2>Blogs</h2>
+            <ul>
+                <li><a href="https://www.valerielapointe.com/" target="_blank">Valerie LaPointe</a></li>
+                <li><a href="https://www.linkedin.com/posts/ian-bousher-373067118_turns-out-a-narrative-chart-that-i-made-for-activity-7225450256182751232-5Eae"
+                        target="_blank">Narrative Structure by Ian Bousher</a></li>
+                <li><a href="http://www.secretsofstory.com/2013/06/how-to-structure-story-around-large_3.html"
+                        target="_blank">How To Structure a Story Around a Large Problem</a></li>
+            </ul>
+        </section>
+
+        <section id="art-books-collection">
+            <h2>Art Books Collection</h2>
+            <ul>
+                <li>The Art of Parasite</li>
+                <li>The Art of Mad Max: Fury Road</li>
+                <li>The Art of The Matrix</li>
+                <li>The Art of The Lord of the Rings</li>
+                <li>The Art of Pixar</li>
+                <li>The Art of Star Wars</li>
+                <li>Tech Noir: The Art of James Cameron</li>
+            </ul>
+        </section>
+
+        <section id="websites">
+            <h2>Websites</h2>
+            <ul>
+                <li><a href="https://shotdeck.com/" target="_blank">ShotDeck</a></li>
+                <li><a href="https://characterdesignreferences.com/" target="_blank">Character Design References</a>
                 </li>
-                <li style='margin-top:1%;'>
-                    I've been called many things. Developer is one of them.
-                </li>
-                <li style='margin-top:1%;'>
-                    Am I making you want to hire me?
-                </li>
-                <li style='margin-top:1%;'>
-                    Here's a little Holiday greeting I've been wanting to get an Internship. My name is Milin Joshi and I want it. I know you've got a vacany at your firm. I know you are looking for an Intern.
-                    here's my LinkedIn address:
-                    <a target="_blank" href='https://www.linkedin.com/in/milincjoshi'>https://www.linkedin.com/in/milincjoshi</a>
-                    I'll leave the profile public. That's what you wanted, right?
-                </li>
-                <li style='margin-top:1%;'>
-                    A Guy who codes. Take that off, what am I?
-                    A Designer, Teacher, Your Chess-mate, Photographer, Dancer, Comics Reader, one who has Dual nature of learning and teaching Physics.
-                </li>
-                <div class='col-lg-12 marginTop5'>
-                    <div class='col-lg-6'>
-                         <p style='margin-top:2%;'>
-                            <div class="col-lg-3 col-md-2 col-sm-12 col-xs-12 "><b>Birthdate</b></div>
-                            <div class="col-lg-9 col-md-10 col-sm-12 col-xs-12">01/21/1992</div>
-                            <div class="col-lg-3 col-md-2 col-sm-12 col-xs-12"><b>CellPhone</b></div>
-                            <div class="col-lg-9 col-md-10 col-sm-12 col-xs-12">+1-323-203-2119</div>
-                            <div class="col-lg-3 col-md-2 col-sm-12 col-xs-12"><b>Email</b> </div>
-                            <div class="col-lg-9 col-md-10 col-sm-12 col-xs-12">milincjoshi@gmail.com</div>
-                         </p>
-                    </div>
-                    <div>
+                <li><a href="https://archive.org/" target="_blank">Archive.org</a></li>
+                <li><a href="https://theelementsofwriting.com/truby-beats/" target="_blank">Truby Beats</a></li>
+            </ul>
+        </section>
 
-                    </div>
-                    <div class='col-lg-6'>
-                        <div class='img-circle col-lg-4'>
-                             <a href="https://www.dropbox.com/s/l3r1w7q6dv22tec/Milin_Resume.pdf?dl=0" class="text-center">
-                                  <img class="col-lg-12 col-md-12 col-sm-12 col-xs-12 img-circle img-responsive center-block text-center" src="http://www.weebly.com/editor/uploads/2/6/9/1/26913164/custom_themes/491711962254056724/files/resume_icon.png" alt="Linkedin.com/in/milincjoshi" />
-                             </a>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>If you have any questions, comments, or would like to get in touch, please fill out the form below. I'll
+                get
+                back to you as soon as possible.</p>
 
-                       </div>
-                        <div class='col-lg-4'>
-                                <img class=" col-lg-12 col-md-12 col-sm-12 col-xs-12 img-circle img-responsive center-block text-center" src="http://www.weebly.com/editor/uploads/2/6/9/1/26913164/custom_themes/491711962254056724/files/linkedin.png" alt="Linkedin.com/in/milincjoshi" />
-                        </div>
-                        <div class='col-lg-4'>
-                                <img class=" col-lg-12 col-md-12 col-sm-12 col-xs-12 img-circle img-responsive center-block text-center" src="http://www.weebly.com/editor/uploads/2/6/9/1/26913164/custom_themes/491711962254056724/files/github.png" alt="Linkedin.com/in/milincjoshi" />
-                        </div>
-                    </div>
-                </div>
+            <form action="#" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
 
-           </ul>
-        </div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
 
-<hr>
-<h3 id='Education' class=" col-lg-12 col-md-12 col-sm-12 col-xs-12 img-rounded text-center" style='font-size:30px;'>
-    <strong>Education</strong>
-</h3>
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject">
 
-        <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12 height100'>
-            <div style='margin-top:10%;' class='col-lg-12 text-center center-block'>
-                <!--Bachelors-->
-                <div class='col-lg-4 col-lg-offset-2'>
-                    <img class="col-lg-6 col-md-12 col-sm-12 col-xs-12 img-circle img-responsive " src="http://www.weebly.com/editor/uploads/2/6/9/1/26913164/custom_themes/491711962254056724/files/Graduation.png" alt="Graduate Icon"" />
-                    <div class='col-lg-12 marginTop5'>
-                        <strong style='font-size:20px;'>Bachelors in Computer Engineering</strong>
-                        <div style='font-size:16px;'>Gujarat Technological University, India</div>
-                        <div style='font-size:16px;'>C U Shah College of Engineering and Technology</div>
-                        <div style='font-size:16px;'>2009 - 2013</div>
-                    </div>
-                </div>
-                <!--End Bachelors-->
-                <!--Masters-->
-                <div class='col-lg-4 col-lg-offset-1'>
-                    <img class="col-lg-6 col-md-12 col-sm-12 col-xs-12 img-circle img-responsive " src="  http://www.weebly.com/editor/uploads/2/6/9/1/26913164/custom_themes/491711962254056724/files/college.png" alt="Graduate Icon"" />
-                    <div class='col-lg-12 marginTop5'>
-                        <strong style='font-size:20px;'>Masters in Computer Science</strong>
-                        <div style='font-size:16px;'>California State University, Los Angeles</div>
-                        <div style='font-size:16px;'>2015 - 2017</div>
-                    </div>
-                </div>
-                <!--End Masters-->
-            </div>
-        </div>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="6" required></textarea>
 
-<hr>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
 
-<h3 class=" col-lg-12 col-md-12 col-sm-12 col-xs-12 img-rounded text-center" style='font-size:30px;'>
-    <strong>Official Experience</strong>
-</h3>
-            <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12 height100'>
-               <div style='margin-top:10%;' class='col-lg-12'>
-                <!--Research Assistant-->
-                <div class='col-lg-4 col-lg-offset-2'>
-                    <strong  style='font-size:20px;'>Research Assistant</strong>
-                    <div style='font-size:20px;'>Lamar University, Texas</div>
-                    <span>Feb 2015 - May 2015</span>
-                    <ul style='list-style-type:none;'>
-                        <li style='font-size:16px;'>Developed Application using Unity, C#</li>
-                        <li style='font-size:16px;'>Ported Application to Oculus Rift, Web, Desktop</li>
-                        <li style='font-size:16px;'>Lead Developer for 3D Navigation</li>
-                        <li style='font-size:16px;'>Designed Game Logic</li>
-                        <li style='font-size:16px;'>Built 3D Models using Autodesk Maya.</li>
-                    </ul>
-                </div>
-                <div class='col-lg-4 col-lg-offset-1'>
-                    <strong  style='font-size:20px;'>Web Developer</strong>
-                    <div style='font-size:20px;'>Perfetto Solutions, Gujarat, India  </div>
-                    <span>June 2012 - April 2013</span>
-                    <ul style='list-style-type:none;'>
-                        <li style='font-size:16px;'>Developed Application using Unity, C#</li>
-                        <li style='font-size:16px;'>Ported Application to Oculus Rift, Web, Desktop</li>
-                        <li style='font-size:16px;'>Lead Developer for 3D Navigation</li>
-                        <li style='font-size:16px;'>Designed Game Logic</li>
-                        <li style='font-size:16px;'>Built 3D Models using Autodesk Maya.</li>
-                    </ul>
-                </div>
-              </div>
-            </div>
-
-<hr>
-<h3 class=" col-lg-12 col-md-12 col-sm-12 col-xs-12 img-rounded text-center" style='font-size:30px;'>
-    <strong>Projects</strong>
-</h3>
-            <!--Projects-->
-            <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12 height100'>
-                  <div class='col-lg-12' style='margin-left:0%;'>
-                      <!--Metamorphosis-->
-                      <div class='col-lg-1 circleDiv'>
-                          <span>Metamorphosis</span><hr class='hrClass'>
-                            <div class='hrClass' style="font-size:14px; margin-top:-2%;">
-                                <span>Language Translation</span><br>
-                                <span>Text-To-Speech Translation</span><br>
-                                <span>Web App using IBM Watson Services</span>
-                            </div>
-                       </div>
-                      <!--End Metamorphosis-->
-                      <!--Student Info System-->
-                      <div class='col-lg-1 circleDiv'>
-                            <span>Student Information System</span><hr class='hrClass'>
-                             <div style="font-size:14px;">
-                                <span>ASP.Net, C#, MS SQL Server, Bootstrap</span><br>
-                                <span>Web app for storing Student Data.</span><br>
-                            </div>
-                      </div>
-                      <!--End Student Info System-->
-                      <!--Nerv-->
-                      <div class='col-lg-1 circleDiv'>
-                            <span>Project Nerv</span><hr class='hrClass'>
-                            <div style="font-size:14px;">
-                                <span>Lead Developer, Team Lead </span><br>
-                                <span>Unity, Autodesk Maya, C#</span><br>
-                                <span>3D Navigation</span><br>
-                            </div>
-                      </div>
-                      <!--End Nerv-->
-                      <!--GOT-->
-                      <div class='col-lg-1 circleDiv'>
-                            <span>Game of Thrones</span><hr class='hrClass'>
-                            <div style="font-size:14px;">
-                                <span>A Windows Phone 8 app</span><br>
-                                <span>Info App made for Game of Thrones</span><br>
-                                <span>Multi-Lingual.</span><br>
-                                <span>MVVM</span><br>
-                            </div>
-                      </div>
-                      <!--End GOT-->
-                      <!--TRS-->
-                      <div class='col-lg-1 circleDiv'>
-                           <span>Transformer Repair System</span><hr class='hrClass'>
-                            <div style="font-size:14px;">
-                                <span>Windows Forms, C#, Desktop App.</span><br />
-                                <span>Lead Developer, Programmer</span> <br />
-                                <span>Led a team of 5 members</span><br />
-								<span>Sold application to 100 companies in 2 days.</span><br/>
-                            </div>
-                      </div>
-                      <!--End TRS-->
-                      <!--Rachana-->
-                      <div class='col-lg-1 circleDiv'>
-                           <span>Rachana Constructions</span><hr class='hrClass'>
-                            <div style="font-size:14px;">
-                                <span>A portfolio Website for Real Estate Company.</span><br />
-                                <span>Bootstrap, ASP.NET with C#, MS SQL Server 2010 </span> <br />
-                            </div>
-                      </div>
-                      <!--End Rachana-->
-                       <!--Rachana-->
-                      <div class='col-lg-1 circleDiv'>
-                           <span>Royal Textiles ERP</span><hr class='hrClass'>
-                            <div style="font-size:14px;">
-                                <span>ASP.NET 3.5 with C#, SQL Server 2008</span><br />
-                                <span>Managing everyday finance, product data and labour data. </span> <br />
-                            </div>
-                      </div>
-                      <!--End Rachana-->
-                      <!--CGS-->
-                      <div class='col-lg-1 circleDiv'>
-                           <span>Career Guidance System</span><hr class='hrClass'>
-                            <div class='hrClass' style="font-size:14px;">
-                                <span>HTML, ASP.NET 3.5 Framework with C#, SQL Server 2008</span><br />
-                                <span>A website for counseling students about choosing career opportunities.  </span> <br />
-                            </div>
-                      </div>
-                      <!--End CGS-->
-                  </div>
-            </div>
-            <!--End Projects-->
-
-<hr>
- <h3 class=" col-lg-12 col-md-12 col-sm-12 col-xs-12 img-rounded text-center" style='font-size:30px;'>
-    <strong>Wall of Skills</strong>
-</h3>
-
-           <!--Skills-->
-            <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12 height100'>
-                <div class='col-lg-12 marginTop5' style="margin-left:5%;">
-                    <div class='col-lg-4 circleSkills' style='background-color:rgb(255, 87, 34);' >HTML</div></a>
-                    <div class='col-lg-4 circleSkills' style='background-color:rgb(244, 67, 54);'>CSS</div>
-                    <div class='col-lg-4 circleSkills' style='background-color:rgb(156, 39, 176);'>Javascript</div>
-                    <div class='col-lg-4 circleSkills' style='background-color:rgb(103, 58, 183);'>Bootstrap</div>
-                    <div class='col-lg-4 circleSkills' style='background-color:rgb(33, 150, 200);'>MDL</div>
-                    <div class='col-lg-4 circleSkills' style='background-color:rgb(3, 169, 244);'>C</div>
-                    <div class='col-lg-4 circleSkills' style='background-color:rgb(63, 81, 181);'>C++</div>
-                    <div class='col-lg-4 circleSkills' style='background-color:rgb(233, 30, 99);'>Java</div>
-                    <div class='col-lg-4 circleSkills' style='background-color:rgb(0, 188, 212);'>C#</div>
-                    <div class='col-lg-4 circleSkills' style='background-color:rgb(0, 150, 136);'>Python</div>
-                    <div class='col-lg-4 circleSkills' style='background-color:rgb(76, 175, 80);'>SQL</div>
-                    <div class='col-lg-4 circleSkills' style='background-color:rgb(139, 195, 74);'>ASP.NET</div>
-                    <div class='col-lg-4 circleSkills' style='background-color:rgb(205, 220, 57);'>JSP</div>
-                    <div class='col-lg-4 circleSkills' style='background-color:rgb(255, 200, 59);'>Unity</div>
-                    <div class='col-lg-4 circleSkills' style='background-color:rgb(255, 193, 7);'>Autodesk Maya</div>
-                    <div class='col-lg-4 circleSkills' style='background-color:rgb(255, 152, 0);'>Oculus Rift</div>
-                    <div class='col-lg-4 circleSkills' style='background-color:rgb(121, 85, 72);'>Servlets</div>
-                    <div class='col-lg-4 circleSkills' style='background-color:rgb(96, 125, 139);'>AI coming soon..</div>
-                  </div>
-            </div>
-            <!--End Skills-->
-
-        </div>
     </div>
 
-
+    <footer>
+        <p>&copy; 2024 Milin Joshi. All rights reserved.</p>
+    </footer>
 </body>
+
 </html>
