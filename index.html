@@ -47,29 +47,6 @@
             margin-bottom: 20px;
         }
 
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        ul li {
-            background: #fff;
-            margin-bottom: 10px;
-            padding: 15px;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        ul li a {
-            color: #4CAF50;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        ul li a:hover {
-            text-decoration: underline;
-        }
-
         #contact {
             margin-top: 50px;
             padding: 20px;
@@ -132,6 +109,109 @@
             background-color: #45a049;
         }
 
+        #youtube-channels {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        #youtube-channels h2 {
+            font-size: 2rem;
+            color: #333;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        #youtube-channels p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .youtube-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .youtube-channel {
+            flex: 1 1 calc(33.333% - 20px);
+            box-sizing: border-box;
+        }
+
+        .youtube-channel h3 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .youtube-channel iframe {
+            width: 100%;
+            height: 315px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        #books {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        #books h2 {
+            font-size: 2rem;
+            color: #333;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        #books h3 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        #books .book-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .book {
+            flex: 1 1 calc(33.333% - 20px);
+            box-sizing: border-box;
+        }
+
+        .book img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (min-width: 768px) {
+            #books ul {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+
+            #books ul li {
+                margin-bottom: 0;
+            }
+        }
+
+
+
+
         footer {
             background-color: #333;
             color: white;
@@ -144,6 +224,8 @@
             margin: 0;
         }
     </style>
+
+
 </head>
 
 <body>
@@ -163,44 +245,27 @@
         <section id="books">
             <h2>Books</h2>
             <h3>Books - Done</h3>
-            <ul>
-                <li>Story by Robert McKee</li>
-                <li>Save the Cat by Blake Snyder</li>
-                <li>Save the Cat Strikes Back by Blake Snyder</li>
-                <li>The Writer's Journey by Christopher Vogler</li>
-                <li>The Anatomy of Story by John Truby</li>
-                <li>Creating Character Arcs by K.M. Weiland</li>
-                <li>Screenplay by Syd Field</li>
-                <li>The Hero's Journey by Neal Soloponte</li>
-                <li>The Screenwriter's Bible by David Trottier</li>
-                <li>Writing Screenplays that Sell by Michael Hauge</li>
-                <li>The Best Story Wins by Matthew Luhn</li>
-            </ul>
+            <ul id="booksDoneList"></ul>
             <h3>Books - Pending</h3>
-            <ul>
-                <li>The Anatomy of Genres by John Truby</li>
-                <li>Creating Character Arcs Workbook by K.M. Weiland</li>
-                <li>The Hero's Journey by Joseph Campbell</li>
-                <li>The Shape of Stories by Neal Soloponte</li>
-                <li>The Hero with a Thousand Faces</li>
-                <li>Selling Your Story in 60 Seconds by Michael Hauge</li>
-                <li>The Art of Dramatic Writing by Lajos Egri</li>
-                <li>Making Comics by Scott McCloud</li>
-                <li>Understanding Comics by Scott McCloud</li>
-                <li>Reinventing Comics by Scott McCloud</li>
-                <li>The Three C’s of Cinematography by Mascelli</li>
-                <li>Into the Woods: A Five Act Journey Into Story by John Yorke</li>
-                <li>The Secrets of Story by Matt Bird</li>
-                <li>150 Screenwriting Challenges by Eric Heisserer</li>
-                <li>Adventures in the Screen Trade by William Goldman</li>
-                <li>The Positive Trait Thesaurus by Angela Ackerman & Becca Puglisi</li>
-            </ul>
+            <ul id="booksPendingList"></ul>
         </section>
+
+
+        <section id="youtube-channels">
+            <h2>YouTube Channels I Follow for Filmmaking</h2>
+            <p>These are some of the YouTube channels that inspire and educate me in the art of filmmaking. I highly
+                recommend checking them out if you're passionate about storytelling and cinema.</p>
+
+            <div class="youtube-grid" id="youtubeGrid">
+                <!-- JavaScript will inject the YouTube channels here -->
+            </div>
+        </section>
+
+
 
         <section id="art-books">
             <h2>Art Books</h2>
             <ul>
-                <li><a href="https://amzn.to/3udHW7J" target="_blank">Parasite - Bong Joon Ho</a></li>
                 <li><a href="https://amzn.to/2REB1XX" target="_blank">Studio Anywhere - Nick Fancher</a></li>
                 <li><a href="https://amzn.to/2TcYBvn" target="_blank">SetLife - Matthew Webb</a></li>
                 <li><a href="https://amzn.to/34ed4sY" target="_blank">Film Directing Shot by Shot - Steven D. Katz</a>
@@ -296,6 +361,120 @@
     <footer>
         <p>&copy; 2024 Milin Joshi. All rights reserved.</p>
     </footer>
+    <script>
+
+        // youtube channels
+        const youtubeChannels = [
+            "https://www.youtube.com/user/everyframeapainting/videos",
+            "https://www.youtube.com/@3blue1brown",
+            "https://www.youtube.com/@BehindtheCurtain",
+            "https://www.youtube.com/@baftaguru",
+            "https://www.youtube.com/@Bulletsandblockbusters",
+            "https://www.youtube.com/@ChristopherHartbooks",
+            "https://www.youtube.com/@CinemaBeyondEntertainment",
+            "https://www.youtube.com/@DamiLeeArch",
+            "https://www.youtube.com/@DavidFinchartist",
+            "https://www.youtube.com/@Filmento",
+            "https://www.youtube.com/@EntertainTheElk",
+            "https://www.youtube.com/@jedibrooks7235",
+            "https://www.youtube.com/@khanacademy",
+            "https://www.youtube.com/@kurzgesagt",
+            "https://www.youtube.com/@LessonsfromtheScreenplay",
+            "https://www.youtube.com/@mattwith4ts",
+            "https://www.youtube.com/@michaelarndt8848",
+            "https://www.youtube.com/@Nerdstalgic",
+            "https://www.youtube.com/@OutstandingScreenplays",
+            "https://www.youtube.com/@OverSimplified",
+            "https://www.youtube.com/@patrickhwillems",
+            "https://www.youtube.com/@PeterJackson",
+            "https://www.youtube.com/@ProkoTV",
+            "https://www.youtube.com/@RobertMcKeeSTORY",
+            "https://www.youtube.com/@samuelkimmusic",
+            "https://www.youtube.com/@ScreenCrush",
+            "https://www.youtube.com/@StudioBinder",
+            "https://www.youtube.com/@TheCloserLook",
+            "https://www.youtube.com/@thetake",
+            "https://www.youtube.com/@ThomasFlight",
+            "https://www.youtube.com/@WriterBrandonMcNulty",
+            "https://www.youtube.com/@WritingwiththeCamera",
+            "https://www.youtube.com/@filmcourage",
+            "https://www.youtube.com/@TylerMowery"
+        ];
+
+        // Target the container where the channels will be added
+        const youtubeGrid = document.getElementById("youtubeGrid");
+
+        // Loop through the array and create the channel divs
+        for (let i = 0; i < youtubeChannels.length; i++) {
+            const channelDiv = document.createElement("div");
+            channelDiv.className = "youtube-channel";
+
+            // Extract the channel name after the '@' character
+            const channelNameText = youtubeChannels[i].split('@')[1];
+
+            // Create and append the channel name with a clickable link
+            const channelLink = document.createElement("a");
+            channelLink.textContent = channelNameText ? channelNameText.split('/')[0] : "Unknown Channel";
+            channelLink.href = youtubeChannels[i];
+            channelLink.target = "_blank";  // Opens the link in a new tab
+
+            channelDiv.appendChild(channelLink);
+
+            youtubeGrid.appendChild(channelDiv);
+        }
+
+        // Books
+        const booksDone = [
+            "Story by Robert McKee",
+            "Save the Cat by Blake Snyder",
+            "Save the Cat Strikes Back by Blake Snyder",
+            "The Writer's Journey by Christopher Vogler",
+            "The Anatomy of Story by John Truby",
+            "Creating Character Arcs by K.M. Weiland",
+            "Screenplay by Syd Field",
+            "The Hero's Journey by Neal Soloponte",
+            "The Screenwriter's Bible by David Trottier",
+            "Writing Screenplays that Sell by Michael Hauge",
+            "The Best Story Wins by Matthew Luhn"
+        ];
+
+        const booksPending = [
+            "The Anatomy of Genres by John Truby",
+            "Creating Character Arcs Workbook by K.M. Weiland",
+            "The Hero's Journey by Joseph Campbell",
+            "The Shape of Stories by Neal Soloponte",
+            "The Hero with a Thousand Faces",
+            "Selling Your Story in 60 Seconds by Michael Hauge",
+            "The Art of Dramatic Writing by Lajos Egri",
+            "Making Comics by Scott McCloud",
+            "Understanding Comics by Scott McCloud",
+            "Reinventing Comics by Scott McCloud",
+            "The Three C’s of Cinematography by Mascelli",
+            "Into the Woods: A Five Act Journey Into Story by John Yorke",
+            "The Secrets of Story by Matt Bird",
+            "150 Screenwriting Challenges by Eric Heisserer",
+            "Adventures in the Screen Trade by William Goldman",
+            "The Positive Trait Thesaurus by Angela Ackerman & Becca Puglisi"
+        ];
+
+        // Populate "Books - Done"
+        const booksDoneList = document.getElementById("booksDoneList");
+        booksDone.forEach(book => {
+            const listItem = document.createElement("li");
+            listItem.textContent = book;
+            booksDoneList.appendChild(listItem);
+        });
+
+        // Populate "Books - Pending"
+        const booksPendingList = document.getElementById("booksPendingList");
+        booksPending.forEach(book => {
+            const listItem = document.createElement("li");
+            listItem.textContent = book;
+            booksPendingList.appendChild(listItem);
+        });
+
+    </script>
+
 </body>
 
 </html>
