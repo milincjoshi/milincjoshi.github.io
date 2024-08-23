@@ -5,37 +5,238 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Milin Joshi - Portfolio</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Montserrat:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
     <style>
+        /* General Styles */
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
+            /* Body text uses Roboto for readability */
+            line-height: 1.6;
             background-color: #f4f4f4;
             color: #333;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
         }
 
+        /* Header Styles */
         header {
-            background-color: #333;
+            background-color: #4CAF50;
             color: white;
-            padding: 20px 0;
-            text-align: center;
-            margin-bottom: 40px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-family: 'Montserrat', sans-serif;
+            /* Header uses Montserrat for a bold look */
         }
 
-        header h1 {
-            font-size: 2.5rem;
+        header h1,
+        header h2,
+        header h3 {
+            font-size: 2rem;
             margin: 0;
-            letter-spacing: 2px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            font-family: 'Poppins', sans-serif;
+            /* Poppins gives a clean and modern feel to headings */
         }
 
+        /* Navigation Styles */
+        header nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 10px 15px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+            /* Poppins for a consistent look in navigation */
+        }
+
+        header nav a:hover {
+            background-color: #45a049;
+        }
+
+        /* Section Headings */
+        section h2 {
+            font-size: 2rem;
+            color: #333;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+            /* Montserrat for section headers */
+        }
+
+        /* Body Text */
+        section p,
+        #contact p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 20px;
+            font-family: 'Merriweather', serif;
+            /* Merriweather for body text for readability and elegance */
+        }
+
+        /* Button Styles */
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            /* Poppins for buttons to maintain a modern look */
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 15px;
+            }
+
+            header nav {
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+            }
+        }
+
+
+        /* General Header Styles */
+        header {
+            background-color: #4CAF50;
+            /* Primary background color */
+            color: white;
+            /* Text color for contrast */
+            padding: 20px;
+            /* Spacing inside the header */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Subtle shadow for depth */
+            position: relative;
+            /* Allows for absolute positioning of elements within */
+            z-index: 1000;
+            /* Ensures the header stays on top of other elements */
+            display: flex;
+            /* Flexbox for alignment */
+            align-items: center;
+            /* Vertical alignment */
+            justify-content: space-between;
+            /* Space between logo and navigation */
+        }
+
+        header h1,
+        header h2,
+        header h3 {
+            font-size: 2rem;
+            /* Larger font size for visibility */
+            margin: 0;
+            /* No margin to fit the layout */
+            font-weight: bold;
+            /* Bold text for emphasis */
+            letter-spacing: 1px;
+            /* Slight spacing for readability */
+        }
+
+        header nav {
+            display: flex;
+            /* Flexbox for navigation items */
+            gap: 20px;
+            /* Spacing between navigation items */
+        }
+
+        header nav a {
+            color: white;
+            /* Link color for contrast */
+            text-decoration: none;
+            /* No underline */
+            font-size: 1rem;
+            /* Base font size */
+            padding: 10px 15px;
+            /* Padding around links */
+            border-radius: 4px;
+            /* Rounded corners for links */
+            transition: background-color 0.3s ease;
+            /* Smooth hover transition */
+        }
+
+        header nav a:hover {
+            background-color: #45a049;
+            /* Slightly darker background on hover */
+        }
+
+        /* Sticky Header */
+        header.sticky {
+            position: fixed;
+            /* Fixed positioning when scrolling */
+            top: 0;
+            /* Align to top */
+            width: 100%;
+            /* Full width */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* Enhanced shadow for stickiness */
+            transition: background-color 0.3s ease;
+            /* Smooth transition for sticky effect */
+        }
+
+        /* Header Logo */
+        header .logo {
+            font-size: 1.5rem;
+            /* Size of the logo text */
+            font-weight: bold;
+            /* Bold logo text */
+        }
+
+        /* Responsive Design for Header */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                /* Stacks elements vertically on smaller screens */
+                align-items: flex-start;
+                /* Aligns items to the left */
+                padding: 15px;
+                /* Reduces padding for mobile */
+            }
+
+            header nav {
+                flex-direction: column;
+                /* Stacks navigation items vertically */
+                gap: 10px;
+                /* Reduced spacing between items */
+                width: 100%;
+                /* Full width navigation */
+            }
+        }
+
+
+        /* General Container Styles */
         .container {
             max-width: 1000px;
             margin: auto;
             padding: 0 20px;
         }
 
+        /* General Section Styles */
         section {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            /* Consistent background color for all sections */
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             margin-bottom: 50px;
         }
 
@@ -43,32 +244,27 @@
             font-size: 2rem;
             color: #333;
             border-bottom: 2px solid #4CAF50;
+            /* Consistent border style */
             padding-bottom: 10px;
             margin-bottom: 20px;
         }
 
-        #contact {
-            margin-top: 50px;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        #contact h2 {
-            font-size: 2rem;
-            color: #333;
-            border-bottom: 2px solid #4CAF50;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-
-        #contact p {
-            font-size: 1.2rem;
+        section p,
+        section h3 {
             color: #555;
+            /* Consistent text color */
             margin-bottom: 20px;
         }
 
+        section p {
+            font-size: 1.2rem;
+        }
+
+        section h3 {
+            font-size: 1.5rem;
+        }
+
+        /* Form Styles for Contact Section */
         form {
             display: flex;
             flex-direction: column;
@@ -109,87 +305,27 @@
             background-color: #45a049;
         }
 
-        #youtube-channels {
-            margin-top: 50px;
-            padding: 20px;
-            background-color: #f9f9f9;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        #youtube-channels h2 {
-            font-size: 2rem;
-            color: #333;
-            border-bottom: 2px solid #4CAF50;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-
-        #youtube-channels p {
-            font-size: 1.2rem;
-            color: #555;
-            margin-bottom: 20px;
-        }
-
-        .youtube-grid {
+        /* Grid Layout Styles */
+        .grid-container,
+        .youtube-grid,
+        .book-grid {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
             justify-content: space-between;
         }
 
-        .youtube-channel {
-            flex: 1 1 calc(33.333% - 20px);
-            box-sizing: border-box;
-        }
-
-        .youtube-channel h3 {
-            font-size: 1.5rem;
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .youtube-channel iframe {
-            width: 100%;
-            height: 315px;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        #books {
-            margin-top: 50px;
-            padding: 20px;
-            background-color: #f9f9f9;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        #books h2 {
-            font-size: 2rem;
-            color: #333;
-            border-bottom: 2px solid #4CAF50;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-
-        #books h3 {
-            font-size: 1.5rem;
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        #books .book-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: space-between;
-        }
-
+        .grid-item,
+        .youtube-channel,
         .book {
             flex: 1 1 calc(33.333% - 20px);
             box-sizing: border-box;
+            margin-bottom: 20px;
         }
 
+        .grid-item img,
+        .grid-item iframe,
+        .youtube-channel iframe,
         .book img {
             width: 100%;
             height: auto;
@@ -197,21 +333,7 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        @media (min-width: 768px) {
-            #books ul {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-            }
-
-            #books ul li {
-                margin-bottom: 0;
-            }
-        }
-
-
-
-
+        /* Footer Styles */
         footer {
             background-color: #333;
             color: white;
@@ -223,9 +345,14 @@
         footer p {
             margin: 0;
         }
+
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .book-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
     </style>
-
-
 </head>
 
 <body>
@@ -250,7 +377,6 @@
             <ul id="booksPendingList"></ul>
         </section>
 
-
         <section id="youtube-channels">
             <h2>YouTube Channels I Follow for Filmmaking</h2>
             <p>These are some of the YouTube channels that inspire and educate me in the art of filmmaking. I highly
@@ -261,11 +387,9 @@
             </div>
         </section>
 
-
-
         <section id="art-books">
             <h2>Art Books</h2>
-            <ul>
+            <ul class="art-book">
                 <li><a href="https://amzn.to/2REB1XX" target="_blank">Studio Anywhere - Nick Fancher</a></li>
                 <li><a href="https://amzn.to/2TcYBvn" target="_blank">SetLife - Matthew Webb</a></li>
                 <li><a href="https://amzn.to/34ed4sY" target="_blank">Film Directing Shot by Shot - Steven D. Katz</a>
@@ -334,7 +458,7 @@
         </section>
 
         <section id="contact">
-            <h2>Contact Us</h2>
+            <h2>Contact</h2>
             <p>If you have any questions, comments, or would like to get in touch, please fill out the form below. I'll
                 get
                 back to you as soon as possible.</p>
@@ -435,7 +559,8 @@
             "The Hero's Journey by Neal Soloponte",
             "The Screenwriter's Bible by David Trottier",
             "Writing Screenplays that Sell by Michael Hauge",
-            "The Best Story Wins by Matthew Luhn"
+            "The Best Story Wins by Matthew Luhn",
+            "Writing Movies for Fun and Profit: How We Made a Billion Dollars at the Box Office and You Can, Too! by Thomas Lennon and Robert Ben Garant"
         ];
 
         const booksPending = [
