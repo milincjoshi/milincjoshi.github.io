@@ -364,17 +364,24 @@
         <section id="work">
             <h2>Work</h2>
             <ul>
-                <li>Bound To Break</li>
+                <li>
+                    Bound To Break
+                    <ul>
+                        <li><a href="BoundToBreak.pdf.pdf" target="_blank">Script</a></li>
+                        <li><a href="BoundToBreakNotes.pdf" target="_blank">Notes</a></li>
+                        <li><a href="BoundToBreakStoryboards.pdf" target="_blank">Storyboards</a></li>
+                    </ul>
+                </li>
                 <li>Struggle of Achievement</li>
             </ul>
         </section>
 
         <section id="books">
             <h2>Books</h2>
-            <h3>Books - Done</h3>
-            <ul id="booksDoneList"></ul>
-            <h3>Books - Pending</h3>
-            <ul id="booksPendingList"></ul>
+            <h3>Books - Read</h3>
+            <ul id="booksReadList"></ul>
+            <h3>Books - Reading</h3>
+            <ul id="booksReadingList"></ul>
         </section>
 
         <section id="youtube-channels">
@@ -522,7 +529,10 @@
             "https://www.youtube.com/@WriterBrandonMcNulty",
             "https://www.youtube.com/@WritingwiththeCamera",
             "https://www.youtube.com/@filmcourage",
-            "https://www.youtube.com/@TylerMowery"
+            "https://www.youtube.com/@TylerMowery",
+            "https://www.youtube.com/@writeforanimation",
+            "https://www.youtube.com/@Thestorysolution",
+            "https://www.youtube.com/@StoriedAway"
         ];
 
         // Target the container where the channels will be added
@@ -548,7 +558,7 @@
         }
 
         // Books
-        const booksDone = [
+        const booksRead = [
             "Story by Robert McKee",
             "Save the Cat by Blake Snyder",
             "Save the Cat Strikes Back by Blake Snyder",
@@ -563,7 +573,7 @@
             "Writing Movies for Fun and Profit: How We Made a Billion Dollars at the Box Office and You Can, Too! by Thomas Lennon and Robert Ben Garant"
         ];
 
-        const booksPending = [
+        const booksReading = [
             "The Anatomy of Genres by John Truby",
             "Creating Character Arcs Workbook by K.M. Weiland",
             "The Hero's Journey by Joseph Campbell",
@@ -583,19 +593,19 @@
         ];
 
         // Populate "Books - Done"
-        const booksDoneList = document.getElementById("booksDoneList");
-        booksDone.forEach(book => {
+        const booksReadList = document.getElementById("booksReadList");
+        booksRead.forEach(book => {
             const listItem = document.createElement("li");
             listItem.textContent = book;
-            booksDoneList.appendChild(listItem);
+            booksReadList.appendChild(listItem);
         });
 
         // Populate "Books - Pending"
-        const booksPendingList = document.getElementById("booksPendingList");
-        booksPending.forEach(book => {
+        const booksReadingList = document.getElementById("booksReadingList");
+        booksReading.forEach(book => {
             const listItem = document.createElement("li");
             listItem.textContent = book;
-            booksPendingList.appendChild(listItem);
+            booksReadingList.appendChild(listItem);
         });
 
     </script>
