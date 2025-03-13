@@ -5,14 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Milin Joshi - Portfolio</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Montserrat:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;600;700&display=swap"
         rel="stylesheet">
     <style>
         /* General Styles */
         body {
-            font-family: 'Roboto', sans-serif;
-            /* Body text uses Roboto for readability */
+            font-family: 'Poppins', sans-serif;
             line-height: 1.6;
             background-color: #f4f4f4;
             color: #333;
@@ -20,342 +18,129 @@
             padding: 0;
         }
 
-        /* Header Styles */
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            position: relative;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            font-family: 'Montserrat', sans-serif;
-            /* Header uses Montserrat for a bold look */
-        }
-
-        header h1,
-        header h2,
-        header h3 {
-            font-size: 2rem;
+        /* Apple-Inspired Design */
+        body {
+            font-family: 'SF Pro Display', sans-serif;
+            background-color: #f5f5f7;
+            color: #1d1d1f;
             margin: 0;
-            font-weight: bold;
-            letter-spacing: 1px;
-            font-family: 'Poppins', sans-serif;
-            /* Poppins gives a clean and modern feel to headings */
+            padding: 0;
         }
 
-        /* Navigation Styles */
-        header nav a {
+        /* Main Container */
+        .container {
+            max-width: 900px;
+            margin: 100px auto 20px;
+            padding: 40px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 600;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
             color: white;
             text-decoration: none;
             font-size: 1rem;
-            padding: 10px 15px;
-            border-radius: 4px;
-            transition: background-color 0.3s ease;
-            font-family: 'Poppins', sans-serif;
-            /* Poppins for a consistent look in navigation */
+            transition: color 0.3s;
         }
 
-        header nav a:hover {
-            background-color: #45a049;
+        nav a:hover {
+            color: #1abc9c;
         }
 
-        /* Section Headings */
+        /* Main Container */
+        .container {
+            max-width: 1100px;
+            margin: 80px auto 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Section Styles */
+        section {
+            margin-bottom: 40px;
+            padding: 20px;
+            border-radius: 15px;
+            background: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
         section h2 {
-            font-size: 2rem;
-            color: #333;
-            border-bottom: 2px solid #4CAF50;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            font-family: 'Montserrat', sans-serif;
-            /* Montserrat for section headers */
-        }
-
-        /* Body Text */
-        section p,
-        #contact p {
-            font-size: 1.2rem;
-            color: #555;
-            margin-bottom: 20px;
-            font-family: 'Merriweather', serif;
-            /* Merriweather for body text for readability and elegance */
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #0071e3;
         }
 
         /* Button Styles */
-        button[type="submit"] {
-            background-color: #4CAF50;
+        .btn {
+            display: inline-block;
+            background: #0071e3;
             color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 1rem;
-            font-family: 'Poppins', sans-serif;
-            /* Poppins for buttons to maintain a modern look */
-        }
-
-        button[type="submit"]:hover {
-            background-color: #45a049;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 15px;
-            }
-
-            header nav {
-                flex-direction: column;
-                gap: 10px;
-                width: 100%;
-            }
-        }
-
-
-        /* General Header Styles */
-        header {
-            background-color: #4CAF50;
-            /* Primary background color */
-            color: white;
-            /* Text color for contrast */
-            padding: 20px;
-            /* Spacing inside the header */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            /* Subtle shadow for depth */
-            position: relative;
-            /* Allows for absolute positioning of elements within */
-            z-index: 1000;
-            /* Ensures the header stays on top of other elements */
-            display: flex;
-            /* Flexbox for alignment */
-            align-items: center;
-            /* Vertical alignment */
-            justify-content: space-between;
-            /* Space between logo and navigation */
-        }
-
-        header h1,
-        header h2,
-        header h3 {
-            font-size: 2rem;
-            /* Larger font size for visibility */
-            margin: 0;
-            /* No margin to fit the layout */
-            font-weight: bold;
-            /* Bold text for emphasis */
-            letter-spacing: 1px;
-            /* Slight spacing for readability */
-        }
-
-        header nav {
-            display: flex;
-            /* Flexbox for navigation items */
-            gap: 20px;
-            /* Spacing between navigation items */
-        }
-
-        header nav a {
-            color: white;
-            /* Link color for contrast */
+            padding: 12px 20px;
+            border-radius: 8px;
             text-decoration: none;
-            /* No underline */
-            font-size: 1rem;
-            /* Base font size */
-            padding: 10px 15px;
-            /* Padding around links */
-            border-radius: 4px;
-            /* Rounded corners for links */
-            transition: background-color 0.3s ease;
-            /* Smooth hover transition */
+            font-weight: 500;
+            transition: background 0.3s;
         }
 
-        header nav a:hover {
-            background-color: #45a049;
-            /* Slightly darker background on hover */
+        .btn:hover {
+            background: #005bb5;
         }
 
-        /* Sticky Header */
-        header.sticky {
-            position: fixed;
-            /* Fixed positioning when scrolling */
-            top: 0;
-            /* Align to top */
-            width: 100%;
-            /* Full width */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            /* Enhanced shadow for stickiness */
-            transition: background-color 0.3s ease;
-            /* Smooth transition for sticky effect */
-        }
-
-        /* Header Logo */
-        header .logo {
-            font-size: 1.5rem;
-            /* Size of the logo text */
-            font-weight: bold;
-            /* Bold logo text */
-        }
-
-        /* Responsive Design for Header */
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                /* Stacks elements vertically on smaller screens */
-                align-items: flex-start;
-                /* Aligns items to the left */
-                padding: 15px;
-                /* Reduces padding for mobile */
-            }
-
-            header nav {
-                flex-direction: column;
-                /* Stacks navigation items vertically */
-                gap: 10px;
-                /* Reduced spacing between items */
-                width: 100%;
-                /* Full width navigation */
-            }
-        }
-
-
-        /* General Container Styles */
-        .container {
-            max-width: 1000px;
-            margin: auto;
-            padding: 0 20px;
-        }
-
-        /* General Section Styles */
-        section {
-            margin-top: 50px;
-            padding: 20px;
-            background-color: #f9f9f9;
-            /* Consistent background color for all sections */
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            margin-bottom: 50px;
-        }
-
-        section h2 {
-            font-size: 2rem;
-            color: #333;
-            border-bottom: 2px solid #4CAF50;
-            /* Consistent border style */
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-
-        section p,
-        section h3 {
-            color: #555;
-            /* Consistent text color */
-            margin-bottom: 20px;
-        }
-
-        section p {
-            font-size: 1.2rem;
-        }
-
-        section h3 {
-            font-size: 1.5rem;
-        }
-
-        /* Form Styles for Contact Section */
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        label {
-            margin-bottom: 5px;
-            font-weight: bold;
-            color: #333;
-        }
-
-        input,
-        textarea {
-            margin-bottom: 15px;
-            padding: 10px;
-            font-size: 1rem;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        input:focus,
-        textarea:focus {
-            border-color: #4CAF50;
-            outline: none;
-        }
-
-        button[type="submit"] {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        button[type="submit"]:hover {
-            background-color: #45a049;
-        }
-
-        /* Grid Layout Styles */
-        .grid-container,
-        .youtube-grid,
-        .book-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: space-between;
-        }
-
-        .grid-item,
-        .youtube-channel,
-        .book {
-            flex: 1 1 calc(33.333% - 20px);
-            box-sizing: border-box;
-            margin-bottom: 20px;
-        }
-
-        .grid-item img,
-        .grid-item iframe,
-        .youtube-channel iframe,
-        .book img {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Footer Styles */
+        /* Footer */
         footer {
-            background-color: #333;
-            color: white;
             text-align: center;
-            padding: 20px 0;
-            margin-top: 50px;
-        }
-
-        footer p {
-            margin: 0;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: #6e6e73;
         }
 
         /* Responsive Design */
-        @media (min-width: 768px) {
-            .book-grid {
-                grid-template-columns: repeat(2, 1fr);
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
             }
         }
     </style>
-</head>
+</head>>
 
 <body>
+
     <header>
         <h1>Milin Joshi - Portfolio</h1>
     </header>
@@ -363,6 +148,7 @@
     <div class="container">
         <section id="work">
             <h2>Work</h2>
+            <p>Check out my latest projects.</p>
             <ul>
                 <li>
                     Bound To Break
@@ -379,6 +165,7 @@
 
         <section id="books">
             <h2>Books</h2>
+            <p>Books I've read and am currently reading.</p>
             <h3>Books - Read</h3>
             <ul id="booksReadList"></ul>
             <h3>Books - Reading</h3>
@@ -398,9 +185,11 @@
         <section id="video">
             <h2>Videos/Youtube</h2>
             <ul>
-                <li><a href="https://www.youtube.com/watch?v=KxDwieKpawg" target="_blank">The Clues to a Great Story |
+                <li><a href="https://www.youtube.com/watch?v=KxDwieKpawg" target="_blank">The Clues to a Great Story
+                        |
                         Andrew Stanton | TED</a></li>
-                <li><a href="https://www.youtube.com/watch?v=sLM6mSSLws0" target="_blank">When a Kid’s Movie Actually
+                <li><a href="https://www.youtube.com/watch?v=sLM6mSSLws0" target="_blank">When a Kid’s Movie
+                        Actually
                         Respects Its Audience</a></li>
                 <li><a href="https://www.youtube.com/user/everyframeapainting/videos" target="_blank">Every Frame a
                         Painting</a></li>
@@ -462,6 +251,7 @@
     <footer>
         <p>&copy; 2024 Milin Joshi. All rights reserved.</p>
     </footer>
+
     <script>
 
         // youtube channels
