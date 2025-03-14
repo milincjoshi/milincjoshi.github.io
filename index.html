@@ -124,6 +124,50 @@
             color: #6e6e73;
         }
 
+        /* Add your CSS styles here if you want to customize the gallery */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .gallery img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             header {
@@ -159,13 +203,28 @@
                     </ul>
                 </li>
                 <li><a href="scriptWriting/BraveLittleBabyBox.pdf" target="_blank">Brave Little Baby Box</a></li>
-                <li><a href="blenderPractice.html" target="_blank">Blender Practice</a></li>
             </ul>
+        </section>
+
+        <section id="gallery-section">
+            <h2>Blender Practice</h2>
+            <div class="gallery">
+                <img src="blenderPractice/bus.png" alt="bus" onclick="openModal(this)">
+                <img src="blenderPractice/cartoonCarScooter.png" alt="Car and Scooter" onclick="openModal(this)">
+                <img src="blenderPractice/cyclesRenderCartoonCar.png" alt="Car" onclick="openModal(this)">
+                <img src="blenderPractice/vwbus.png" alt="Bus" onclick="openModal(this)">
+                <img src="blenderPractice/scene.png" alt="Scene 1" onclick="openModal(this)">
+                <img src="blenderPractice/scene2.png" alt="Scene 2" onclick="openModal(this)">
+            </div>
+
+            <div class="modal" id="imageModal" onclick="closeModal()">
+                <span class="close">&times;</span>
+                <img id="modalImg">
+            </div>
         </section>
 
         <section id="books">
             <h2>Books</h2>
-            <p>Books I've read and am currently reading.</p>
             <h3>Books - Read</h3>
             <ul id="booksReadList"></ul>
             <h3>Books - Reading</h3>
@@ -180,22 +239,6 @@
             <div class="youtube-grid" id="youtubeGrid">
                 <!-- JavaScript will inject the YouTube channels here -->
             </div>
-        </section>
-
-        <section id="video">
-            <h2>Videos/Youtube</h2>
-            <ul>
-                <li><a href="https://www.youtube.com/watch?v=KxDwieKpawg" target="_blank">The Clues to a Great Story
-                        |
-                        Andrew Stanton | TED</a></li>
-                <li><a href="https://www.youtube.com/watch?v=sLM6mSSLws0" target="_blank">When a Kid’s Movie
-                        Actually
-                        Respects Its Audience</a></li>
-                <li><a href="https://www.youtube.com/user/everyframeapainting/videos" target="_blank">Every Frame a
-                        Painting</a></li>
-                <li><a href="https://www.youtube.com/@3blue1brown" target="_blank">3blue1brown</a></li>
-                <li><a href="https://www.youtube.com/@BehindtheCurtain" target="_blank">Behind the Curtain</a></li>
-            </ul>
         </section>
 
         <section id="blogs">
@@ -309,16 +352,30 @@
             "https://www.youtube.com/@Nerdstalgic",
             "https://www.youtube.com/@lancelloti",
             "https://www.youtube.com/@ExcessCinema",
-            "https://www.youtube.com/@BradsArtSchool"
+            "https://www.youtube.com/@BradsArtSchool",
+            "https://www.youtube.com/watch?v=KxDwieKpawg",
+            "https://www.youtube.com/watch?v=sLM6mSSLws0",
+            "https://www.youtube.com/user/everyframeapainting/videos",
         ];
 
         // Target the container where the channels will be added
         const youtubeGrid = document.getElementById("youtubeGrid");
+        youtubeGrid.style.display = "grid";
+        youtubeGrid.style.gridTemplateColumns = "repeat(auto-fill, minmax(250px, 1fr))"; // Responsive grid
+        youtubeGrid.style.gap = "20px"; // Increased gap for better spacing
+        youtubeGrid.style.padding = "20px"; // Added padding around the grid
 
         // Loop through the array and create the channel divs
         for (let i = 0; i < youtubeChannels.length; i++) {
             const channelDiv = document.createElement("div");
             channelDiv.className = "youtube-channel";
+            channelDiv.style.padding = "20px";
+            channelDiv.style.border = "1px solid #ddd";
+            channelDiv.style.textAlign = "center";
+            channelDiv.style.borderRadius = "12px"; // Rounded corners for a modern look
+            channelDiv.style.backgroundColor = "#fff"; // Soft background color
+            channelDiv.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.1)"; // Soft shadow for depth
+            channelDiv.style.transition = "transform 0.3s ease, box-shadow 0.3s ease"; // Smooth hover effects
 
             // Extract the channel name after the '@' character
             const channelNameText = youtubeChannels[i].split('@')[1];
@@ -327,67 +384,191 @@
             const channelLink = document.createElement("a");
             channelLink.textContent = channelNameText ? channelNameText.split('/')[0] : "Unknown Channel";
             channelLink.href = youtubeChannels[i];
-            channelLink.target = "_blank";  // Opens the link in a new tab
+            channelLink.target = "_blank"; // Opens the link in a new tab
+            channelLink.style.textDecoration = "none";
+            channelLink.style.color = "#333";
+            channelLink.style.fontWeight = "bold";
+            channelLink.style.fontSize = "18px"; // Larger font for readability
+            channelLink.style.display = "block"; // Make the link fill the div
+            channelLink.style.padding = "10px"; // Add padding around the text
+            channelLink.style.transition = "color 0.3s ease"; // Smooth transition for link color change
+
+            // Hover effect for channel link
+            channelLink.addEventListener("mouseover", () => {
+                channelLink.style.color = "#1e90ff"; // Change link color on hover
+            });
+            channelLink.addEventListener("mouseout", () => {
+                channelLink.style.color = "#333"; // Reset to original color
+            });
+
+            // Hover effect for channel div
+            channelDiv.addEventListener("mouseover", () => {
+                channelDiv.style.transform = "scale(1.05)"; // Slightly enlarge on hover
+                channelDiv.style.boxShadow = "0 8px 16px rgba(0, 0, 0, 0.2)"; // More prominent shadow on hover
+            });
+            channelDiv.addEventListener("mouseout", () => {
+                channelDiv.style.transform = "scale(1)"; // Reset size
+                channelDiv.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.1)"; // Reset shadow
+            });
 
             channelDiv.appendChild(channelLink);
-
             youtubeGrid.appendChild(channelDiv);
         }
 
+
+
         // Books
-        const booksRead = [
-            "Story by Robert McKee",
-            "Save the Cat by Blake Snyder",
-            "Save the Cat Strikes Back by Blake Snyder",
-            "The Writer's Journey by Christopher Vogler",
-            "The Anatomy of Story by John Truby",
-            "Creating Character Arcs by K.M. Weiland",
-            "Screenplay by Syd Field",
-            "The Hero's Journey by Neal Soloponte",
-            "The Screenwriter's Bible by David Trottier",
-            "Writing Screenplays that Sell by Michael Hauge",
-            "The Best Story Wins by Matthew Luhn",
-            "Writing Movies for Fun and Profit by Thomas Lennon and Robert Ben Garant",
-            "The Story Solution: 23 Actions All Great Heroes Must Take - Eric Edson",
-            "How to write for Animation - Jeffrey Scott"
-        ];
+        const booksRead = {
+            "Story": "Robert McKee",
+            "Save the Cat": "Blake Snyder",
+            "Save the Cat Strikes Back": "Blake Snyder",
+            "The Writer's Journey": "Christopher Vogler",
+            "The Anatomy of Story": "John Truby",
+            "Creating Character Arcs": "K.M. Weiland",
+            "Screenplay": "Syd Field",
+            "The Hero's Journey": "Neal Soloponte",
+            "The Screenwriter's Bible": "David Trottier",
+            "Writing Screenplays that Sell": "Michael Hauge",
+            "The Best Story Wins": "Matthew Luhn",
+            "Writing Movies for Fun and Profit": "Thomas Lennon and Robert Ben Garant",
+            "The Story Solution: 23 Actions All Great Heroes Must Take": "Eric Edson",
+            "How to Write for Animation": "Jeffrey Scott"
+        };
 
-        const booksReading = [
-            "The Anatomy of Genres by John Truby",
-            "Creating Character Arcs Workbook by K.M. Weiland",
-            "The Hero's Journey by Joseph Campbell",
-            "The Shape of Stories by Neal Soloponte",
-            "The Hero with a Thousand Faces",
-            "Selling Your Story in 60 Seconds by Michael Hauge",
-            "The Art of Dramatic Writing by Lajos Egri",
-            "Making Comics by Scott McCloud",
-            "Understanding Comics by Scott McCloud",
-            "Reinventing Comics by Scott McCloud",
-            "The Three C’s of Cinematography by Mascelli",
-            "Into the Woods: A Five Act Journey Into Story by John Yorke",
-            "The Secrets of Story by Matt Bird",
-            "The Secrets of Character by Matt Bird",
-            "150 Screenwriting Challenges by Eric Heisserer",
-            "Adventures in the Screen Trade by William Goldman",
-            "The Positive Trait Thesaurus by Angela Ackerman & Becca Puglisi"
-        ];
-
-        // Populate "Books - Done"
+        // Target the container where the books will be added
         const booksReadList = document.getElementById("booksReadList");
-        booksRead.forEach(book => {
-            const listItem = document.createElement("li");
-            listItem.textContent = book;
-            booksReadList.appendChild(listItem);
+        booksReadList.style.display = "grid";
+        booksReadList.style.gridTemplateColumns = "repeat(auto-fit, minmax(150px, 1fr))";
+        booksReadList.style.gap = "15px";
+        booksReadList.style.padding = "20px";
+        booksReadList.style.maxWidth = "900px";
+        booksReadList.style.margin = "auto";
+
+        // Loop through the books object and create book divs
+        Object.entries(booksRead).forEach(([book, author]) => {
+            const bookDiv = document.createElement("div");
+            bookDiv.className = "book-item";
+            bookDiv.style.padding = "15px";
+            bookDiv.style.borderRadius = "8px";
+            bookDiv.style.background = "linear-gradient(135deg, #f8f9fa, #e9ecef)";
+            bookDiv.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.1)";
+            bookDiv.style.textAlign = "center";
+            bookDiv.style.fontWeight = "bold";
+            bookDiv.style.color = "#444";
+            bookDiv.style.fontSize = "1rem";
+            bookDiv.style.transition = "transform 0.3s ease, box-shadow 0.3s ease";
+
+            // Hover effect
+            bookDiv.addEventListener("mouseover", () => {
+                bookDiv.style.transform = "translateY(-5px)";
+                bookDiv.style.boxShadow = "0 6px 12px rgba(0, 0, 0, 0.15)";
+            });
+
+            bookDiv.addEventListener("mouseout", () => {
+                bookDiv.style.transform = "translateY(0)";
+                bookDiv.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.1)";
+            });
+
+            // Create and append the book title
+            const title = document.createElement("div");
+            title.textContent = book;
+            title.style.fontSize = "1.1rem"; // Slightly larger font for the title
+            bookDiv.appendChild(title);
+
+            // Create and append the author name with smaller font
+            const authorDiv = document.createElement("div");
+            authorDiv.textContent = `by ${author}`;
+            authorDiv.style.fontSize = "0.9rem"; // Smaller font for the author name
+            authorDiv.style.fontWeight = "normal"; // Optional: make the author's name not bold
+            authorDiv.style.color = "#6c757d"; // Lighter color for author name
+            bookDiv.appendChild(authorDiv);
+
+            // Append the book div to the container
+            booksReadList.appendChild(bookDiv);
         });
 
-        // Populate "Books - Pending"
+
+        // Target the container where the pending books will be added
         const booksReadingList = document.getElementById("booksReadingList");
-        booksReading.forEach(book => {
-            const listItem = document.createElement("li");
-            listItem.textContent = book;
-            booksReadingList.appendChild(listItem);
+        booksReadingList.style.display = "grid";
+        booksReadingList.style.gridTemplateColumns = "repeat(auto-fit, minmax(150px, 1fr))";
+        booksReadingList.style.gap = "15px";
+        booksReadingList.style.padding = "20px";
+        booksReadingList.style.maxWidth = "900px";
+        booksReadingList.style.margin = "auto";
+
+        // Define the books object with titles and authors
+        const booksReading = {
+            "The Anatomy of Genres": "John Truby",
+            "Creating Character Arcs Workbook": "K.M. Weiland",
+            "The Hero's Journey": "Joseph Campbell",
+            "The Shape of Stories": "Neal Soloponte",
+            "The Hero with a Thousand Faces": "Joseph Campbell",
+            "Selling Your Story in 60 Seconds": "Michael Hauge",
+            "The Art of Dramatic Writing": "Lajos Egri",
+            "Making Comics": "Scott McCloud",
+            "Understanding Comics": "Scott McCloud",
+            "Reinventing Comics": "Scott McCloud",
+            "The Three C’s of Cinematography": "Joseph V. Mascelli",
+            "Into the Woods: A Five Act Journey Into Story": "John Yorke",
+            "The Secrets of Story": "Matt Bird",
+            "The Secrets of Character": "Matt Bird",
+            "150 Screenwriting Challenges": "Eric Heisserer",
+            "Adventures in the Screen Trade": "William Goldman",
+            "The Positive Trait Thesaurus": "Angela Ackerman & Becca Puglisi"
+        };
+
+        // Loop through the books object and create book divs
+        Object.entries(booksReading).forEach(([book, author]) => {
+            const bookDiv = document.createElement("div");
+            bookDiv.className = "book-item";
+            bookDiv.style.padding = "15px";
+            bookDiv.style.borderRadius = "8px";
+            bookDiv.style.background = "linear-gradient(135deg, #fff3cd, #ffeeba)";
+            bookDiv.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.1)";
+            bookDiv.style.textAlign = "center";
+            bookDiv.style.fontWeight = "bold";
+            bookDiv.style.color = "#856404";
+            bookDiv.style.fontSize = "1rem";
+            bookDiv.style.transition = "transform 0.3s ease, box-shadow 0.3s ease";
+
+            // Hover effect
+            bookDiv.addEventListener("mouseover", () => {
+                bookDiv.style.transform = "translateY(-5px)";
+                bookDiv.style.boxShadow = "0 6px 12px rgba(0, 0, 0, 0.15)";
+            });
+
+            bookDiv.addEventListener("mouseout", () => {
+                bookDiv.style.transform = "translateY(0)";
+                bookDiv.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.1)";
+            });
+
+            // Create and append the book title
+            const title = document.createElement("div");
+            title.textContent = book;
+            title.style.fontSize = "1.1rem"; // Slightly larger font for the title
+            bookDiv.appendChild(title);
+
+            // Create and append the author name with smaller font
+            const authorDiv = document.createElement("div");
+            authorDiv.textContent = `by ${author}`;
+            authorDiv.style.fontSize = "0.9rem"; // Smaller font for the author name
+            authorDiv.style.fontWeight = "normal"; // Optional: make the author's name not bold
+            authorDiv.style.color = "#6c757d"; // Lighter color for author name
+            bookDiv.appendChild(authorDiv);
+
+            // Append the book div to the container
+            booksReadingList.appendChild(bookDiv);
         });
 
+        // blender practice images
+        function openModal(img) {
+            document.getElementById("imageModal").style.display = "flex";
+            document.getElementById("modalImg").src = img.src;
+        }
+        function closeModal() {
+            document.getElementById("imageModal").style.display = "none";
+        }
     </script>
 
 </body>
